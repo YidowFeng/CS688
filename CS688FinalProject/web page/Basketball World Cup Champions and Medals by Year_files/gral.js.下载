@@ -1,0 +1,33 @@
+// mueve menu lateral y barra
+var navdrawerContainer = document.querySelector('.navdrawer-container');
+var appbarElement = document.querySelector('.app-bar');
+var darkbgElement = document.querySelector('.navdrawer-bg');
+
+var menuBtnO = document.querySelector('.menu-open');
+var menuBtnC = document.querySelector('.menu-close');
+
+menuBtnO.addEventListener('click', function () {
+	appbarElement.classList.add('open');
+	navdrawerContainer.classList.add('open');
+	darkbgElement.classList.add('open');
+}, true);
+menuBtnC.addEventListener('click', function () {
+	appbarElement.classList.remove('open');
+	navdrawerContainer.classList.remove('open');
+	darkbgElement.classList.remove('open');
+}, true);
+darkbgElement.addEventListener('click', function () {
+	appbarElement.classList.remove('open');
+	navdrawerContainer.classList.remove('open');
+	darkbgElement.classList.remove('open');
+}, true);
+// en Desktop cambia size header al bajar
+window.onscroll = function() {scrollFunction()};
+var apBar = document.querySelector('.app-bar');
+
+function scrollFunction() {
+if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+	apBar.classList.add('mini');
+} else {
+	apBar.classList.remove('mini');
+}}

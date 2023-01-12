@@ -1,0 +1,19 @@
+// Expande/contrae submenus
+// Cuantos Submenu hay
+var todosSubm = document.querySelectorAll('.sub-menux');
+var subm1x1 = [] ; // inicializa
+for(var i = 1; i < todosSubm.length + 1; i++){
+	conservandoI (i); // evita problema de scope
+}
+function conservandoI (i) {
+	// datos cada ID dentro de los sub-menu
+	subm1x1[i] = document.querySelector('#subm' + i); // subm1 subm2
+	// cada menu escucha clicks
+	subm1x1[i].addEventListener('click', function() {
+		cambioEstado(i) ; } , true);
+}
+function cambioEstado(i){
+	var isOpen = subm1x1[i].classList.contains('open');
+	if(isOpen) { subm1x1[i].classList.remove('open'); }
+	else { subm1x1[i].classList.add('open'); }
+}
